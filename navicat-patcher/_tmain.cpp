@@ -37,7 +37,7 @@ BOOL BackupNavicat(PTSTR NavicatFileName) {
 BOOL ReplaceNavicatPublicKey(HANDLE resUpdater, void* pemPublicKey, size_t length) {
     return UpdateResource(resUpdater,
                           RT_RCDATA,
-                          TEXT("ActivationPubKey"),
+                          TEXT("ACTIVATIONPUBKEY"),
                           MAKELANGID(LANG_ENGLISH, SUBLANG_DEFAULT),
                           pemPublicKey, length);
 }
@@ -99,7 +99,7 @@ int _tmain(int argc, TCHAR* argv[]) {
         EndUpdateResource(hUpdater, FALSE);
     }
 
-    _tprintf_s(TEXT("Success!.\r\n"));
+    _tprintf_s(TEXT("Success!\r\n"));
     RSA_free(PrivateKey);
     return 0;
 }
